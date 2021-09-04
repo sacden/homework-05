@@ -4,6 +4,7 @@ import Input from "./components/input";
 import "./styles.css";
 
 function App() {
+  const [value, setValue] = useState(0);
   return (
     <div className="page">
       <div className="header">
@@ -11,8 +12,8 @@ function App() {
       </div>
       <div className="content">
         <div className="calculator">
-          <Input />
-          <Buttons />
+          <Input value={value} />
+          <Buttons value={value} setValue={setValue} />
         </div>
       </div>
     </div>

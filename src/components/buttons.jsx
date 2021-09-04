@@ -1,8 +1,12 @@
 import React from "react";
 
-const Buttons = () => {
+const Buttons = ({ value, setValue }) => {
+  const inputHandler = (e) => {
+    console.log(e.target.innerText);
+    setValue(value + e.target.innerText);
+  };
   return (
-    <div className="buttons">
+    <div className="buttons" onClick={inputHandler}>
       <div className="operators">
         <div>+</div>
         <div>-</div>

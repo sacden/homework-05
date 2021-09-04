@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const Input = () => {
-  const [value, setValue] = useState(0);
+const Input = ({ value }) => {
   return <div className="input">{value}</div>;
 };
 
