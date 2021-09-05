@@ -1,9 +1,20 @@
 import React from "react";
+import * as math from "mathjs";
 
 const Buttons = ({ value, setValue }) => {
   const inputHandler = (e) => {
-    console.log(e.target.innerText);
-    setValue(value + e.target.innerText);
+    try {
+      let expression = e.target.innerText;
+      if (expression === "AC") {
+        setValue();
+      } else if (expression === "=") {
+        setValue(math.evaluate(value));
+      } else {
+        value === undefined ? setValue(expression) : setValue(value + expression);
+      }
+    } catch (e) {
+      alert("Вы ввели неправильные данные");
+    }
   };
   return (
     <div className="buttons" onClick={inputHandler}>

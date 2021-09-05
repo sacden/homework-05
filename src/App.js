@@ -4,7 +4,7 @@ import Input from "./components/input";
 import "./styles.css";
 
 function App() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState();
   return (
     <div className="page">
       <div className="header">
